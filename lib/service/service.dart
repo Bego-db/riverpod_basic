@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:riverpod_app/model/games_model.dart';
 import 'package:riverpod_app/model/user_model.dart';
 
 class Service {
@@ -17,18 +16,6 @@ class Service {
     } catch (e) {
       print(e.toString());
       return null;
-    }
-  }
-
-  
-  static Future<List<Games>?> fetchGames2() async {
-    final response =
-        await http.get(Uri.parse('https://www.freetogame.com/api/games'));
-    if (response.statusCode == 200) {
-      var data = json.decode(response.body);
-      return data;
-    } else {
-      throw Exception('Failed to load data');
     }
   }
 }

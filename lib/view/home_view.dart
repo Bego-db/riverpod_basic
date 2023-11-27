@@ -1,9 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_app/model/user_model.dart';
-
 import 'package:riverpod_app/riverpod/riverpod_controller.dart';
 import 'package:riverpod_app/view/Loading.dart';
 
@@ -25,9 +22,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    var read = ref.read(controller);
     var watch = ref.watch(controller);
-
     return Scaffold(
       appBar: AppBar(title: const Text("Users")),
       body: LoadingWidget(
